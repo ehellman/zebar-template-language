@@ -12,14 +12,13 @@
   "contributes": {
     "languages": [
       {
-        "id": "zebartl",
+        "id": "zebar-template-language",
         "aliases": [
           "Zebar Template",
-          "zebartl"
+          "zebar-template-language"
         ],
         "extensions": [
           ".zebar",
-          ".zebartl",
           ".zebar-template"
         ],
         "configuration": "./language-configuration.json"
@@ -27,14 +26,14 @@
     ],
     "grammars": [
       {
-        "language": "zebartl",
+        "language": "zebar-template-language",
         "scopeName": "source.zebar-template",
-        "path": "./syntaxes/zebartl.tmLanguage.json"
+        "path": "./syntaxes/zebar-template-language.tmLanguage.json"
       }
     ],
     "snippets": [
       {
-        "language": "zebartl",
+        "language": "zebar-template-language",
         "path": "./snippets/zebar.code-snippets.json"
       }
     ]
