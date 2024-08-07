@@ -1,0 +1,42 @@
+{
+  "name": "zebar-template-language",
+  "displayName": "Zebar Template Language",
+  "description": "Adds support for the Zebar template language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "zebartl",
+        "aliases": [
+          "Zebar Template",
+          "zebartl"
+        ],
+        "extensions": [
+          ".zebar",
+          ".zebartl",
+          ".zebar-template"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "zebartl",
+        "scopeName": "source.zebar-template",
+        "path": "./syntaxes/zebartl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "zebartl",
+        "path": "./snippets/zebar.code-snippets.json"
+      }
+    ]
+  }
+}

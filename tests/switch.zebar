@@ -1,0 +1,38 @@
+@switch (weather.status) {
+    @case ('clear_day') {<i class="nf nf-weather-day_sunny"></i>}
+    @case ('clear_night') {<i class="nf nf-weather-night_clear"></i>}
+    @case ('cloudy_day') {<i class="nf nf-weather-day_cloudy"></i>}
+    @case ('cloudy_night') {<i class="nf nf-weather-night_alt_cloudy"></i>}
+    @case ('light_rain_day') {<i class="nf nf-weather-day_sprinkle"></i>}
+    @case ('light_rain_night') {<i class="nf nf-weather-night_alt_sprinkle"></i>}
+    @case ('heavy_rain_day') {<i class="nf nf-weather-day_rain"></i>}
+    @case ('heavy_rain_night') {<i class="nf nf-weather-night_alt_rain"></i>}
+    @case ('snow_day') {<i class="nf nf-weather-day_snow"></i>}
+    @case ('snow_night') {<i class="nf nf-weather-night_alt_snow"></i>}
+    @case ('thunder_day') {<i class="nf nf-weather-day_lightning"></i>}
+    @case ('thunder_night') {<i class="nf nf-weather-night_alt_lightning"></i>}
+}
+
+{{ weather.celsiusTemp }}°
+
+@switch (true) {
+    @case (battery.state === 'charging') {
+        <span class="floating-label time-until-full">
+        {{ Math.floor(Math.floor(battery.timeTillFull / 60000) / 60) }}h
+        {{ Math.floor(battery.timeTillFull / 60000) % 60 }}m
+        </span>
+    }
+    @case (battery.state === 'discharging') {
+        <span class="floating-label time-until-empty">
+        <div>{{ Math.floor(battery.chargePercent) }}%</div>
+        <div>
+            {{ Math.floor(Math.floor(battery.timeTillEmpty / 60000) / 60) }}h
+            {{ Math.floor(battery.timeTillEmpty / 60000) % 60 }}m
+        </div>
+        </span>
+    }
+    @case (battery.chargePercent > 60) {<span class="floating-label">High-Mid</span>}
+    @case (battery.chargePercent > 40) {<span class="floating-label">Low-Mid</span>}
+    @case (battery.chargePercent > 20) {<span class="floating-label">Low</span>}
+    @default {<span class="floating-label">Panic</span>}
+}

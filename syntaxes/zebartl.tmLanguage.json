@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Zebar Template",
+  "patterns": [
+    {
+      "include": "#html"
+    },
+    {
+      "include": "#javascript"
+    },
+    {
+      "include": "#zebar-directives"
+    }
+  ],
+  "repository": {
+    "html": {
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    "javascript": {
+      "patterns": [
+        {
+          "begin": "\\{\\{",
+          "end": "\\}\\}",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    "zebar-directives": {
+      "patterns": [
+        {
+          "match": "@(if|else|elseif|for|switch|case|default)",
+          "name": "keyword.control.zebar-template"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.zebar-template"
+}

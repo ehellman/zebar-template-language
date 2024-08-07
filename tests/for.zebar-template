@@ -1,0 +1,17 @@
+@for (workspace of glazewm.currentWorkspaces) {
+    <button
+        class="workspace {{ workspace.hasFocus ? 'focused' : '' }} {{ workspace.isDisplayed ? 'displayed' : '' }}"
+        id="{{ workspace.name }}"
+    >
+    <span class="labels">
+        <span class="id">{{ workspace.name }}</span>
+        <span class="display-name">
+            {{ workspace.displayName ?? workspace.displayName }}
+        </span>
+    </span>
+    </button>
+}
+
+@for (fruit of ['apple', 'orange', 'pineapple']) {
+    <span>{{ fruit }}</span>
+}

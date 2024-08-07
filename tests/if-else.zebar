@@ -1,0 +1,7 @@
+@if (weather.celsiusTemp > 30) {
+  <p class="hot">It's hot yo</p>
+} @else if (weather.celsiusTemp > 20) {
+  <p>It's not that bad</p>
+} @else {
+  <p>It's chilly here</p>
+}

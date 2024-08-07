@@ -1,0 +1,2 @@
+<span>Random number: {{ Math.random() }}</span>
+<span>Temperature: {{ weather.celsiusTemp }}</span>

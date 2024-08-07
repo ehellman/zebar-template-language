@@ -1,0 +1,55 @@
+{
+  "if statement": {
+    "prefix": "if",
+    "body": ["@if (${1:condition}) {", "\t$0", "}"],
+    "description": "If statement"
+  },
+  "if elseif statement": {
+    "prefix": "ifelif",
+    "body": [
+      "@if (${1:condition}) {",
+      "\t$2",
+      "} @elseif (${3:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "if elseif statement"
+  },
+  "if elseif else statement": {
+    "prefix": "ifelifel",
+    "body": [
+      "@if (${1:condition}) {",
+      "\t$2",
+      "} @elseif (${3:condition}) {",
+      "\t$4",
+      "} @else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "if elseif else statement"
+  },
+  "if else statement": {
+    "prefix": "ifelse",
+    "body": ["@if (${1:condition}) {", "\t$2", "} @else {", "\t$0", "}"],
+    "description": "if else statement"
+  },
+  "for loop": {
+    "prefix": "for",
+    "body": ["@for (${1:item} of ${2:items}) {", "\t$0", "}"],
+    "description": "for loop"
+  },
+  "switch statement": {
+    "prefix": "switch",
+    "body": [
+      "@switch (${1:expression}) {",
+      "\t@case (${2:value}) {",
+      "\t\t$3",
+      "\t}",
+      "\t@default {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "switch statement"
+  }
+}
